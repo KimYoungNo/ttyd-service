@@ -1,5 +1,5 @@
 version: 40
-stepTemplates:
+jobs:
 - name: Push to Github
   steps:
   - !PushRepository
@@ -10,3 +10,7 @@ stepTemplates:
     force: false
     condition: SUCCESSFUL
     optional: false
+  retryCondition: never
+  maxRetries: 3
+  retryDelay: 30
+  timeout: 14400
