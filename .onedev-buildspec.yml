@@ -1,0 +1,12 @@
+version: 40
+stepTemplates:
+- name: Push to Github
+  steps:
+  - !PushRepository
+    name: push
+    remoteUrl: https://github.com/KimYoungNo/ttyd-service.git
+    userName: KimYoungNo
+    passwordSecret: access-token
+    force: false
+    condition: SUCCESSFUL
+    optional: false
