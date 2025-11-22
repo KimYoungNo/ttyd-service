@@ -22,7 +22,7 @@ Please visit the [ttyd repository](https://github.com/tsl0922/ttyd) for more inf
 
 Copy & paste the below command in the terminal:
 ```
-
+bash -c "$(wget -qLO - https://raw.githubusercontent.com/KimYoungNo/ttyd-service/refs/heads/main/ttyd-service-install.sh)"
 ```
 
 ## Procedure
