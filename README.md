@@ -15,6 +15,7 @@ Please visit the [ttyd repository](https://github.com/tsl0922/ttyd) for more inf
 
 *List of supported Distribution:*
 - Debian
+- Ubuntu
 
 <br/>
 
@@ -27,13 +28,13 @@ bash -c "$(wget -qLO - https://raw.githubusercontent.com/KimYoungNo/ttyd-service
 
 ## Procedure
 
-After executing the command above, the next procedures automatically start:
+After executing the command above, the next procedures automatically begin:
 
 1. System package updates & upgrade
 2. Dependency installation
 3. ttyd installation & compilation
 4. ttyd-service configuation
-5. Service unit create & enable
+5. Service unit creation & enabling
 
 <br/>
 

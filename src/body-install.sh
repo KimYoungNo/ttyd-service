@@ -52,7 +52,8 @@ If you choose 'yes', the service will be removed in an instant and cannot be rec
     if $overwrite; then
       revoke_path=$(systemctl cat "${SERVICE_NAME}" | grep "^#")
       rm -f "/${revoke_path#*/}" 1>/dev/null 2>&1
-      systemctl disable --now "${SERVICE_NAME}.service" 1>/dev/null 2>&1
+      systemctl kill "${SERVICE_NAME}" 1>/dev/null 2>&1
+      systemctl disable --now "${SERVICE_NAME}" 1>/dev/null 2>&1
       systemctl daemon-reload 1>/dev/null 2>&1
       break
     else

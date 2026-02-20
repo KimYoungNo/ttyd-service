@@ -85,6 +85,11 @@ if [[ ${OS} == "DEBIAN" ]]; then
   CONFIG_DIR="/usr/local/share/ttyd-service"
 fi
 mkdir -p "${CONFIG_DIR}" >/dev/null 2>&1
+
+# sudo privilege ───────────────────────────────────────────────────────────────
+if [[ "${EUID:-$(id -u)}" -ne 0 ]]; then
+  SUDO="sudo"
+fi
 # Dependencies Installation ───────────────────────────────────────────────────────────────
 msg_info "Installing Dependencies..."
 if [[ ${OS} == "DEBIAN" ]]; then
@@ -134,7 +139,8 @@ If you choose 'yes', the service will be removed in an instant and cannot be rec
     if $overwrite; then
       revoke_path=$(systemctl cat "${SERVICE_NAME}" | grep "^#")
       rm -f "/${revoke_path#*/}" 1>/dev/null 2>&1
-      systemctl disable --now "${SERVICE_NAME}.service" 1>/dev/null 2>&1
+      systemctl kill "${SERVICE_NAME}" 1>/dev/null 2>&1
+      systemctl disable --now "${SERVICE_NAME}" 1>/dev/null 2>&1
       systemctl daemon-reload 1>/dev/null 2>&1
       break
     else

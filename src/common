@@ -56,3 +56,8 @@ if [[ ${OS} == "DEBIAN" ]]; then
   CONFIG_DIR="/usr/local/share/ttyd-service"
 fi
 mkdir -p "${CONFIG_DIR}" >/dev/null 2>&1
+
+# sudo privilege ───────────────────────────────────────────────────────────────
+if [[ "${EUID:-$(id -u)}" -ne 0 ]]; then
+  SUDO="sudo"
+fi
