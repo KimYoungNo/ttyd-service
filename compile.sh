@@ -13,10 +13,8 @@ disclaimer='
 # To change this script, edit the corresponding source
 # and regenerate it instead.
 
-# Copyright (c) 2025 KimYoungNo
 # Author: KimYoungNo
-# License: MIT
-# Version: 0.0.1'
+# License: MIT'
 
 function embed() {
   local src="$1"
