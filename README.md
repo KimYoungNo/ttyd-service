@@ -4,18 +4,11 @@ ttyd-service installer for Linux
 
 Please visit the [ttyd repository](https://github.com/tsl0922/ttyd) for more information.
 
-## Features
+</br>
 
-- Interactive configuration with **whiptail**
-- Automatic conflict detection on **Service name** & **Port number**
-- Fully customizable **ExecStart** & **WorkingDirectory**
-- Single script execution
-
-<br/>
-
-*List of supported Distribution:*
-- Debian
-- Ubuntu
+### List of tested distribution:
+- Debian 12, 13
+- Ubuntu 24.04
 
 <br/>
 
@@ -31,10 +24,10 @@ bash -c "$(wget -qLO - https://raw.githubusercontent.com/KimYoungNo/ttyd-service
 After executing the command above, the next procedures automatically begin:
 
 1. System package updates & upgrade
-2. Dependency installation
-3. ttyd installation & compilation
-4. ttyd-service configuation
-5. Service unit creation & enabling
+1. Dependency installation
+1. ttyd installation & compilation
+1. ttyd-service configuation
+1. Service unit creation & enabling
 
 <br/>
 
